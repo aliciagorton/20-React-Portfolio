@@ -1,29 +1,21 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Header from './Header';
-import {makeStyles} from '@material-ui/styles';
-
-const useStyles = makeStyles({
-    mainContainer: {
-        backgroundColor: "rgba(60, 60, 60, 0.9.5)",
-        height: "100vh"
-    },
-    particlesCanvas: {
-        position: "fixed",
-        opacity: "0.3",
-    }
-});
-
+// import About from './About';
+// import Projects from './Projects';
+// import Experience from './Experience';
 
 const Home = () => {
-    const classes = useStyles();
-
-    return(
+    return (
         <div>
-            <Navbar />
+            <Navbar /> 
             <Header />
+          {/* <About />
+            <Projects /> */}
+             {/* <Experience />   */}
+            
         </div>
-    );
+    )
 }
 
 export default Home;

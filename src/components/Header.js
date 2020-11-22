@@ -1,6 +1,6 @@
 import React from 'react';
 import { Avatar, Box, Grid, Typography } from '@material-ui/core';
-import avatar from './logo.png';
+import avatar from './static/logo.png';
 import Typed from 'react-typed';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -39,19 +39,21 @@ const Header = () => {
     return (
         <>       
             <Box className={classes.typedContainer}>
-                <Grid>
+                {/* <Grid>
                     <Avatar src={avatar} alt = "Dog Ears" />
-                </Grid>
+                </Grid> */}
                 <Typography className={classes.subtitle} variant="h5">
                     <Typed 
                         strings={["Hello my name is"]}
-                        typeSpeed={40}
-                        backSpeed={60}
+                        typeSpeed={80}
+                        backSpeed={20}
                         loop
                     />
                 </Typography>
                 <Typography>
-                    <Typed strings={["Alicia Gorton"]} typeSpeed={40}/>
+                    <Typed 
+                    strings={["Alicia Gorton"]} 
+                    typeSpeed={40}/>
                 </Typography>
                 
             </Box>
