@@ -3,9 +3,11 @@ import {makeStyles} from '@material-ui/core/styles';
 import {Typography, Box, Button} from '@material-ui/core';
 import Navbar from './Navbar';
 import resume from './static/AliciaGorton.pdf'
+import Footer from './Footer';
 
 const useStyles = makeStyles(theme => ({
     mainContainer: {
+        marginTop: "75px",
     },
     timeLine: {
         position: "relative",
@@ -73,7 +75,7 @@ const useStyles = makeStyles(theme => ({
         maxWidth: "9.375rem",
         margin: "0 3rem 0 auto",
         fontSize: "1.8rem",
-        background: "#039be5",
+        background: "#0f9994",
         color: "white",
         lineHeight: 1,
         padding: "0.5rem 0 1rem",
@@ -93,16 +95,18 @@ const useStyles = makeStyles(theme => ({
         }
     },
     heading: {
-        color: "#0288d1",
+        color: "#0f9994", 
+        fontWeight: "bold",
+        fontSize: "60px",
         padding: "3rem 0",
         textTransform: "uppercase"
     },
     subHeading: {
-        color: "#eeeeee",
+        color: "#8fc7e3",
         padding: "0",
     },
     button: {
-        background: "#0288d1",
+        background: "#0f9994",
         color: "white",
 
         "&:hover": {
@@ -165,7 +169,7 @@ const Experience = () => {
                     <Typography variant="subtitle1" align="left" className={classes.subHeading}>
                     Delivered direct ABA therapy to children with autism as well as a strong relationship with families involved. On a team that spearheaded the first rollout of online documentation in the company, a part of discussions of how to improve usability and ease within the app.
                     <br></br>
-                    Key Accomplishments: P​ assed exam for the state of California to become a Registered Behavioral Technician.
+                    Key Accomplishments: P​assed exam for the state of California to become a Registered Behavioral Technician.
                     </Typography>
                 </Box>
                     <Typography variant="h2" className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
@@ -184,7 +188,7 @@ const Experience = () => {
                         <Typography variant="subtitle1" align="left" className={classes.subHeading}>
                         Provided ABA therapy to children with autism, in multiple settings such as community, school, and home environments. Responsibilities included detailed documentation, coaching for teachers, and ability to transmit important information to all parties. Learned invaluable de-escalation and crisis prevention techniques.
                         <br></br>
-                        Key Accomplishments: P​ assed CPI (crisis prevention courses).
+                        Key Accomplishments: P​assed CPI (crisis prevention courses).
                         </Typography>
                     </Box>
                     <Typography variant="h2" className={`${classes.timeLineYear} ${classes.timeLineItem}`}>
@@ -238,7 +242,7 @@ const Experience = () => {
                         <Typography variant="subtitle1" align="left" className={classes.subHeading}>
                         Provided skilled nursing care for assisted living, post-acute medical, rehabilitation and hospice care. Direct care was my primary responsibility, along with supervisor responsibility of nursing assistants.
                         <br></br>
-                        KeyAccomplishments: Received numerous complements from families regarding their loved one.
+                        KeyAccomplishments: Received numerous complements from families regarding their loved one and passed NCLEX exam. 
                         </Typography>
                     </Box>
                 </Box>
@@ -248,6 +252,7 @@ const Experience = () => {
                     </Button>
                 </Box>
             </Box>
+            <Footer />
         </Box>
     );
 }

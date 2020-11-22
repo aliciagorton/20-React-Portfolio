@@ -5,17 +5,28 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
+
+
 const useStyles = makeStyles({
     root: {
         "& .MuiBottomNavigationAction-root": {
             minWidth: 0,
-            maxWidth: 300
+            maxWidth: 300,
         },
         "& .MuiSvgIcon-root": {
             fill: "#039be5",
-            fontSize: "1.8rem",
-        }
-    }
+            fontSize: "1.5rem",
+            // paddingLeft: "100px",
+            // paddingRight: "100px",
+        },
+       
+    },
+
+    // designBy: {
+    //     fontSize: "12px",
+    //     textAlign: "center",
+    //     color: "#369ed1",
+    // },
 })
 
 const Footer = () => {
@@ -23,7 +34,13 @@ const Footer = () => {
     const classes = useStyles();
 
     return(
-        <BottomNavigation width="auto" style={{background: "#eeeeee"}}>
+        <BottomNavigation width="auto" style={{background: "#082738"}}>
+            
+            {/* <Typography className={classes.designBy}>
+                Designed & Built by Alicia Gorton: 
+            </Typography>
+            
+            */}
             <BottomNavigationAction
                 href="https://github.com/aliciagorton" target="_blank"
                 className={classes.root}

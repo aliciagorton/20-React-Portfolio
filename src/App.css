@@ -1,8 +1,11 @@
 html, body {
-  height: 10vh;
+
+  padding-top: "70px";
+  margin-top: "50px";
 }
 
 #root{
-  background:rgba(60, 60, 60, 0.95);
+
+  background:#082738;
   min-height: 100vh;
 }

@@ -1,34 +1,49 @@
 import React from 'react';
-import { Avatar, Box, Grid, Typography } from '@material-ui/core';
-import avatar from './static/logo.png';
+import {  Box, Typography } from '@material-ui/core';
+
 import Typed from 'react-typed';
 import { makeStyles } from '@material-ui/core/styles';
 
 
 //Styling
-const useStyles = makeStyles(theme => ({
-    avatar: {
-        width: theme.spacing(15),
-        height: theme.spacing(15),
-        margin: theme.spacing(1)
-    },
-    title: {
-        color: "#0277bd"
-    },
-    subtitle: {
-        color: "#039be5",
-        marginBottom: "3rem"
-    },
-    typedContainer: {
+const useStyles = makeStyles({
+    boxContainer: {
         position: "absolute",
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
         width: "100vw",
         textAlign: "center",
-        zIndex: 1
-    }
-}))
+        zIndex: 1,
+        
+    },
+    titleContainer: {
+        color: "#0f9994",
+        fontSize: "15px",
+        
+    },
+
+
+    name: {
+        color: "#8fc7e3",
+        marginBottom: "3rem",
+        fontSize: "100px",
+        zIndex: "12",
+    },
+
+    descContainer: {
+        marginBottom: "3rem",
+        
+    },
+
+    desc: {
+        fontSize: "20px",
+        color: "#0f9994",
+        paddingLeft: "120px",
+        paddingRight: "120px",
+
+    },
+});
 
 
 
@@ -38,23 +53,30 @@ const Header = () => {
 
     return (
         <>       
-            <Box className={classes.typedContainer}>
-                {/* <Grid>
-                    <Avatar src={avatar} alt = "Dog Ears" />
-                </Grid> */}
-                <Typography className={classes.subtitle} variant="h5">
-                    <Typed 
-                        strings={["Hello my name is"]}
-                        typeSpeed={80}
-                        backSpeed={20}
-                        loop
-                    />
-                </Typography>
-                <Typography>
-                    <Typed 
-                    strings={["Alicia Gorton"]} 
-                    typeSpeed={40}/>
-                </Typography>
+            <Box className={classes.boxContainer}>
+                <Box className={classes.titleContainer}>
+                    <Typography >
+                        <Typed className={classes.title} variant="h5"
+                            strings={["Hello my name is"]}
+                            typeSpeed={160}
+                            backSpeed={20}
+                            loop
+                        />
+                    </Typography>
+                </Box>
+                <Box className={classes.nameContainer}>                         
+                    <Typography >
+                        <Typed className={classes.name} variant="h1"
+                        strings={["Alicia Gorton"]} 
+                        typeSpeed={40}/>
+                    </Typography>
+                </Box>
+                <Box className={classes.descContainer} variant="h3">
+                    <Typography className={classes.desc} >
+                        I'm a full-stack web developer based in Sacramento, CA that enjoys crafting websites, applications, and everything in between. I am looking for opportunities of growth in the fields of emerging technology and data science.
+                    </Typography>
+                </Box>
+  
                 
             </Box>
         </>

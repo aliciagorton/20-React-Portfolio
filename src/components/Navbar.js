@@ -10,17 +10,49 @@ import { Link } from 'react-router-dom';
 
 
 
+
 const useStyles = makeStyles ({
- navbar: {
-    background: "linear-gradient(90deg, rgb(8, 14, 79) 0%, rgb(2, 5, 36) 100%)",
-    height: "80px",
-    display: "flex",
-    textAlign: "center",
-    fontSize: "1.2rem",
-    position: "sticky",
-    top: "0",
-    zindex: "999",
+  main: {
+    backgroundColor: '#081321',
+    height:"75px",
+    position: "fixed",
+    
   },
+
+  toolbar: {
+    color: "white",
+
+ 
+  },
+
+  navMenu:  {
+    listStyleType: "none", 
+    margin: "0",
+    padding: "0",
+   
+  },
+
+  navLinks:  {
+    color: "white",
+    listStyleType: "none", 
+    textDecoration: "none",
+    display: "inline-block",
+    fontSize: "20px",
+    padding: "20px",
+    float: "left",
+
+
+  },
+
+  resume:  {
+    color: "white",
+    textDecoration: "none",
+    
+
+  },
+
+
+
 })
 
 const Navbar = () => {
@@ -32,18 +64,18 @@ const Navbar = () => {
 
 
   return (
-     <AppBar>
-      <Toolbar>
+     <AppBar className={classes.main}>
+      <Toolbar className={classes.toolbar}>
         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           <MenuIcon />
         </IconButton>
 
         <Box>
-          <Link to='/' className={classes.navbarLogo}onClick={closeMobileMenu}>
-            <Avatar alt="Dog Ears" src={avatar} className={classes.large}/>
+          <Link to='/' className={classes.navbarLogo} onClick={closeMobileMenu}>
+            <Avatar alt="Dog Ears" src={avatar} className={classes.avatar}/>
           </Link>
-          <ul className={click_state ? 'nav-menu active' : 'nav-menu'}>
-            <li className={classes.navItem}>
+          <ul className={click_state ? 'nav-menu active' : 'nav-menu'} style={{ listStyleType: "none",  }}>
+            <li className={classes.navItem} styled={{ display: "inline",}}>
               <Link to='/' className={classes.navLinks} onClick={closeMobileMenu}>
                 Home
               </Link>
@@ -79,7 +111,7 @@ const Navbar = () => {
         </Box>
         <Box component="div" style={{textAlign: "center"}}> 
           <Button className={classes.button}>
-              <a className={classes.link} href={resume} rel="noreferrer" download target="_blank">Resume</a>
+              <a className={classes.resume} href={resume} rel="noreferrer" download target="_blank">Resume</a>
           </Button>
         </Box>
 
