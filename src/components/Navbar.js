@@ -8,15 +8,24 @@ const useStyles = makeStyles({
   main: {
     backgroundColor: "#081321",
     // height: "75px",
-    position: "fixed",
-  },
-  toolbar: {
-    color: "white",
+    // position: "fixed",
+    flex: 1, 
+    float: "right",
+    display: "flex", 
   },
   navMenu: {
     listStyleType: "none",
     margin: 0,
-    padding: 0
+    padding: 0,
+    
+    // textAlign: "right",
+    // display: "flex",
+    // overflow: "auto",
+  },
+  
+  navItem: {
+    justifyContent: "end",
+    textAlign: "right",
   },
   navLinks: {
     color: "white",

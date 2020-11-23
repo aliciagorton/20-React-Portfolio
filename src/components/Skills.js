@@ -1,24 +1,30 @@
-import React from 'react';
+ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // display: 'flex',
+    display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: "#082738",
-    marginTop:"40px",
-    paddingLeft:"160px",
+    marginTop:"10px",
+    marginBottom:"30px",
+    textAlign: "center"
   },
   gridList: {
-    
-    width: 250,
+    textAlign: "center",
+    margrinRight:0,
+    width: 500,
     height: 50,
+    paddingRight: "260px",
+    paddingTop: "20px",
   },
   subheading: {
+    paddingLeft: "360px",
     color: "#0f9994",
     fontSize: "20px",
   },
@@ -81,5 +87,5 @@ const Skills = () =>  {
             </GridList>
         </div>
     );
- }  
+}  
  export default Skills;

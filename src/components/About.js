@@ -4,7 +4,7 @@ import { Avatar, Typography, Box, Grid, Paper} from '@material-ui/core';
 import Navbar from './Navbar';
 import Img from './static/img.jpeg';
 import Skills from './Skills';
-// import Education from './Education';
+import Education from './Education';
 import Footer from "./Footer";
 
 
@@ -108,7 +108,7 @@ function About() {
                 </Box>
             </Box>
             <Skills /> 
-            {/* <Education />  */}
+            <Education /> 
             <Footer />
         </Box>
     );

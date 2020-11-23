@@ -52,9 +52,9 @@ const Home = () => {
                     <Typography >
                         <Typed className={classes.title} variant="h5"
                             strings={["Hello my name is"]}
-                            typeSpeed={200}
-                            backSpeed={2}
-                            loop
+                            typeSpeed={140}
+                            // backSpeed={2}
+                            // loop
                         />
                     </Typography>
                 </Box>
@@ -62,7 +62,7 @@ const Home = () => {
                     <Typography >
                         <Typed className={classes.name} variant="h1"
                         strings={["Alicia Gorton"]} 
-                        typeSpeed={160}/>
+                        typeSpeed={200}/>
                     </Typography>
                 </Box>
                 <Box className={classes.descContainer} variant="h3">
