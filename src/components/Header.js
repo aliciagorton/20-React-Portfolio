@@ -22,7 +22,9 @@ const useStyles = makeStyles({
         fontSize: "15px",
         
     },
-
+    title: {
+        justifyContent: "left",
+    },
 
     name: {
         color: "#8fc7e3",
@@ -33,6 +35,9 @@ const useStyles = makeStyles({
 
     descContainer: {
         marginBottom: "3rem",
+        paddingLeft: "400",
+        paddingRight: "400",
+
         
     },
 
@@ -58,8 +63,8 @@ const Header = () => {
                     <Typography >
                         <Typed className={classes.title} variant="h5"
                             strings={["Hello my name is"]}
-                            typeSpeed={160}
-                            backSpeed={20}
+                            typeSpeed={200}
+                            backSpeed={2}
                             loop
                         />
                     </Typography>
@@ -68,7 +73,7 @@ const Header = () => {
                     <Typography >
                         <Typed className={classes.name} variant="h1"
                         strings={["Alicia Gorton"]} 
-                        typeSpeed={40}/>
+                        typeSpeed={160}/>
                     </Typography>
                 </Box>
                 <Box className={classes.descContainer} variant="h3">
@@ -76,8 +81,6 @@ const Header = () => {
                         I'm a full-stack web developer based in Sacramento, CA that enjoys crafting websites, applications, and everything in between. I am looking for opportunities of growth in the fields of emerging technology and data science.
                     </Typography>
                 </Box>
-  
-                
             </Box>
         </>
     );
