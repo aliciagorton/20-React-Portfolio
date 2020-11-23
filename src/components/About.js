@@ -11,14 +11,14 @@ import Footer from "./Footer";
 
 const useStyles = makeStyles({
     mainContainer: {
-        marginTop: "15px",
+       
         paddingLeft: "130px",
         paddingRight: "130px",
     },
     imgContainer: {
-        marginTop: "75px",
+        marginTop: "40px",
+        marginBottom: "40px",
         paddingLeft: "1px",
-
         paddingTop:"40px",
         borderStyle: "none",
         boxShadow: "none",

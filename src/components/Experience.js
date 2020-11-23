@@ -7,7 +7,7 @@ import Footer from './Footer';
 
 const useStyles = makeStyles(theme => ({
     mainContainer: {
-        marginTop: "75px",
+        marginTop: "30px",
     },
     timeLine: {
         position: "relative",

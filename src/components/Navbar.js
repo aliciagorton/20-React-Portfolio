@@ -1,121 +1,83 @@
-import React,  { useState }  from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar,Toolbar, Box, Button, IconButton, Avatar }
-from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import resume from './static/AliciaGorton.pdf'
+import { AppBar, Avatar } from '@material-ui/core';
 import avatar from './static/logo.png';
 
-import { Link } from 'react-router-dom';
-
-
-
-
-const useStyles = makeStyles ({
+const useStyles = makeStyles({
   main: {
-    backgroundColor: '#081321',
-    height:"75px",
+    backgroundColor: "#081321",
+    // height: "75px",
     position: "fixed",
-    
   },
-
   toolbar: {
     color: "white",
-
- 
   },
-
-  navMenu:  {
-    listStyleType: "none", 
-    margin: "0",
-    padding: "0",
-   
+  navMenu: {
+    listStyleType: "none",
+    margin: 0,
+    padding: 0
   },
-
-  navLinks:  {
+  navLinks: {
     color: "white",
-    listStyleType: "none", 
+    listStyleType: "none",
     textDecoration: "none",
     display: "inline-block",
     fontSize: "20px",
-    padding: "20px",
+    padding: "0 20px",
     float: "left",
-
-
   },
-
-  resume:  {
+  resume: {
     color: "white",
     textDecoration: "none",
-    
-
-  },
-
-
-
+  }
 })
 
 const Navbar = () => {
-  
   const classes = useStyles();
   const [click_state, setClick] = useState(false);
-  const handleClick = () => setClick(!click_state);
   const closeMobileMenu = () => setClick(false);
-
+  const resume_pdf = "/AliciaGorton.pdf";
 
   return (
-     <AppBar className={classes.main}>
-      <Toolbar className={classes.toolbar}>
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton>
-
-        <Box>
-          <Link to='/' className={classes.navbarLogo} onClick={closeMobileMenu}>
+    <AppBar className={classes.main}>
+      <ul className={click_state ? 'nav-menu active' : 'nav-menu'} style={{listStyleType: "none", padding: 0, margin: 0}}>
+        <li className={classes.navItem} style={{display: "inline"}}>
+          <Link to='/' className={classes.navLinks} onClick={closeMobileMenu}>
             <Avatar alt="Dog Ears" src={avatar} className={classes.avatar}/>
           </Link>
-          <ul className={click_state ? 'nav-menu active' : 'nav-menu'} style={{ listStyleType: "none",  }}>
-            <li className={classes.navItem} styled={{ display: "inline",}}>
-              <Link to='/' className={classes.navLinks} onClick={closeMobileMenu}>
-                Home
-              </Link>
-            </li>
-            <li className={classes.navItem}>
-              <Link
-                to='/about'
-                className={classes.navLinks}
-                onClick={closeMobileMenu}
-              >
-                About
-              </Link>
-            </li>
-            <li className={classes.navItem}>
-              <Link
-                to='/projects'
-                className={classes.navLinks}
-                onClick={closeMobileMenu}
-              >
-                Projects
-              </Link>
-            </li>
-            <li className={classes.navItem}>
-              <Link
-                to='/experience'
-                className={classes.navLinks}
-                onClick={closeMobileMenu}
-              >
-                Experience
-              </Link>
-            </li>
-          </ul>
-        </Box>
-        <Box component="div" style={{textAlign: "center"}}> 
-          <Button className={classes.button}>
-              <a className={classes.resume} href={resume} rel="noreferrer" download target="_blank">Resume</a>
-          </Button>
-        </Box>
-
-      </Toolbar>
+        </li>
+        <li className={classes.navItem} style={{display: "inline"}}>
+          <Link
+            to='/about'
+            className={classes.navLinks}
+            onClick={closeMobileMenu}
+          >
+            About
+          </Link>
+        </li>
+        <li className={classes.navItem} style={{display: "inline"}}>
+          <Link
+            to='/projects'
+            className={classes.navLinks}
+            onClick={closeMobileMenu}
+          >
+            Projects
+          </Link>
+        </li>
+        <li className={classes.navItem} style={{display: "inline"}}>
+          <Link
+            to='/experience'
+            className={classes.navLinks}
+            onClick={closeMobileMenu}
+          >
+            Experience
+          </Link>
+        </li>
+        <li className={classes.navItem} style={{display: "inline"}}>
+          <a href={resume_pdf} className={classes.navLinks} target="_blank">Resumé</a>
+        </li>
+      </ul>
     </AppBar>
   )
 }

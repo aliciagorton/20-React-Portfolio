@@ -19,17 +19,16 @@ import project1 from './static/images/comingsoon.jpeg';
 import project2 from './static/images/Kuma.png';
 import project3 from './static/images/chuck.png';
 import project4 from './static/images/burger.png';
-import { MailRounded } from '@material-ui/icons';
+// import { MailRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     cardContainer: {
-        marginTop: "100px",
+        margin: "40px 100px 60px 100px",
         maxWidth: 330,
-        margin: "auto",
+        
         boxShadow: "0 19px 38px rgba(0,0,0,0.40), 0 15px 12px rgba(0,0,0,0.30)",
     },
     title: {
-        // marginTop: "75px",
         color: "#0f9994", 
         fontWeight: "bold",
         fontSize: "60px",
@@ -37,7 +36,7 @@ const useStyles = makeStyles(theme => ({
         textTransform: "uppercase",
         textAlign: "center",
         justifyContent: "center",
-        margin: "75px 100px 0px 100px",
+        margin: "40px 100px 40px 100px",
     },
     summary: {
         height: "410px",

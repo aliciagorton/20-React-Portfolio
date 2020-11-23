@@ -1,7 +1,6 @@
 import React from 'react';
-import {  Box, Typography } from '@material-ui/core';
-
 import Typed from 'react-typed';
+import {  Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -22,10 +21,6 @@ const useStyles = makeStyles({
         fontSize: "15px",
         
     },
-    title: {
-        justifyContent: "left",
-    },
-
     name: {
         color: "#8fc7e3",
         marginBottom: "3rem",
@@ -34,11 +29,7 @@ const useStyles = makeStyles({
     },
 
     descContainer: {
-        marginBottom: "3rem",
-        paddingLeft: "400",
-        paddingRight: "400",
-
-        
+        marginBottom: "3rem", 
     },
 
     desc: {
@@ -52,10 +43,8 @@ const useStyles = makeStyles({
 
 
 
-const Header = () => {
-
+const Home = () => {
     const classes = useStyles();
-
     return (
         <>       
             <Box className={classes.boxContainer}>
@@ -86,4 +75,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Home;
