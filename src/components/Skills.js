@@ -24,7 +24,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
   },
   skillSet: {
-    margin: "50px 0"
+    margin: "50px 0px",
+    paddingLeft: "150px",
+    justifyContent: 'space-around',
+    textAlign: "center",
   }
 }));
 
@@ -75,10 +78,10 @@ const Skills = () =>  {
 
     return (
         <div className={classes.skillSet}>
-            <Grid container direction="row" justify="center" alignItems="center">
+            <Grid container item xs={12} sm={12} direction="row" justify="center" alignItems="center">
                 <p className={classes.subheading}>Technical Skills</p>
             </Grid>
-            <Grid container direction="row" justify="center" alignItems="center">
+            <Grid container item xs={9} sm={12} direction="row" justify="center" alignItems="center">
                 <GridList cellHeight={50} className={classes.gridList} cols={10}>
                     {tileData.map(tile => <GridListTile key={tile.img} cols={tile.cols || 1}>
                     <img src={tile.img} alt={tile.title} />

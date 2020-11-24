@@ -91,12 +91,12 @@ function Education() {
   return (
     // <div className={classes.root}>
     <div>
-      <Grid container direction="row" justify="center" alignItems="center">
+      <Grid container item xs={12} direction="row" justify="center" alignItems="center">
         <p className={classes.subHeading}>Education</p>
       </Grid>
       
       <Grid 
-        container 
+        container item xs={6} sm={12} 
         direction="row" 
         justify="center"
         alignItems="center"

@@ -7,11 +7,12 @@ import avatar from './static/logo.png';
 const useStyles = makeStyles({
   main: {
     backgroundColor: "#081321",
-    // height: "75px",
+    height: "55px",
     // position: "fixed",
     flex: 1, 
     float: "right",
     display: "flex", 
+    // textAlign: "center",
   },
   navMenu: {
     listStyleType: "none",
@@ -33,8 +34,9 @@ const useStyles = makeStyles({
     textDecoration: "none",
     display: "inline-block",
     fontSize: "20px",
-    padding: "0 20px",
+    padding: "20px 80px",
     float: "left",
+    
   },
   resume: {
     color: "white",
