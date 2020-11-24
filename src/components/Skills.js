@@ -1,6 +1,6 @@
  import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Grid from '@material-ui/core/Grid';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 
@@ -16,20 +16,16 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center"
   },
   gridList: {
-    textAlign: "center",
-    margrinRight:0,
     width: 500,
-    height: 50,
-    paddingRight: "260px",
-    paddingTop: "20px",
   },
   subheading: {
-    paddingLeft: "360px",
     color: "#0f9994",
-    fontSize: "20px",
+    fontSize: "30px",
+    fontWeight: "bold",
   },
-
-
+  skillSet: {
+    margin: "50px 0"
+  }
 }));
 
 const Skills = () =>  {
@@ -78,13 +74,17 @@ const Skills = () =>  {
     ]; 
 
     return (
-        <div className={classes.root}>
-            <h1 className={classes.subheading}>Technical Skills: </h1>
-            <GridList cellHeight={20} className={classes.gridList} cols={10}>
-                {tileData.map(tile => <GridListTile key={tile.img} cols={tile.cols || 1}>
-                  <img src={tile.img} alt={tile.title} />
-                </GridListTile>)}
-            </GridList>
+        <div className={classes.skillSet}>
+            <Grid container direction="row" justify="center" alignItems="center">
+                <p className={classes.subheading}>Technical Skills</p>
+            </Grid>
+            <Grid container direction="row" justify="center" alignItems="center">
+                <GridList cellHeight={50} className={classes.gridList} cols={10}>
+                    {tileData.map(tile => <GridListTile key={tile.img} cols={tile.cols || 1}>
+                    <img src={tile.img} alt={tile.title} />
+                    </GridListTile>)}
+                </GridList>
+            </Grid>
         </div>
     );
 }  

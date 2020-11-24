@@ -1,7 +1,6 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import { Avatar, Typography, Box, Grid, Paper} from '@material-ui/core';
-import Navbar from './Navbar';
 import Img from './static/img.jpeg';
 import Skills from './Skills';
 import Education from './Education';
@@ -70,8 +69,7 @@ function About() {
     return (
         <Box className={classes.outterContainer}>
             <Box component="header" className={classes.mainContainer}>
-                <Navbar />
-                
+
                 <Grid container spacing={1} direction="row" justify="space-evenly" alignItems="flex-start" className={classes.imgContainer}> 
 
                 <Grid item xs={3}>
@@ -99,7 +97,7 @@ function About() {
                 </Grid>
                
                 <Box className={classes.aboutMe}  component="div" whiteSpace="normal">
-                    <Typography align="left" style={{ }}  className={classes.subHeading}>
+                    <Typography align="left" className={classes.subHeading}>
                         A recent graduate of a Full Stack Web Developer bootcamp taught by UC Davis, with a MERN focus.Passionate ​to merge professional background in healthcare with technology.Adept communicator, organizer, and problem solver.Confident in ability to utilize learned skills and ability to strengthen any team.
                         <br />
                         <br />

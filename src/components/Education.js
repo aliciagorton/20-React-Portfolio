@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import SwipeableViews from 'react-swipeable-views';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -8,24 +7,19 @@ import Typography from '@material-ui/core/Typography';
 import { AppBar } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import { useTheme } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     backgroundColor: "#082738",
-    display: 'flex',
-    height: 300,
-    color: "#0f9994",
-    // fontSize: "15px",
-    width: "500px",
-    textAlign: "center",
-    // paddingLeft:"160px",
-    // paddingRight:"100px",
     boxShadow: "none",
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+  },
+  tab: {
+    color: "#FFFFFF",
   },
   mainContainer: {
     backgroundColor: "#082738",
@@ -34,20 +28,18 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "none",
   },
   subHeading: {
-    color: "#8fc7e3",
-    fontSize: "15px",
+    color: "#0f9994",
+    fontSize: "30px",
+    fontWeight: "bold"
   },
-
   subContainer: {
     color: "white",
     fontSize: "15px",
   },
-
   SwipeableViews:{
     color: "white",
     fontSize: "15px",
   },
-
 }));
 
 function TabPanel(props) {
@@ -81,9 +73,6 @@ function a11yProps(index) {
     id: `vertical-tab-${index}`,
     'aria-controls': `vertical-tabpanel-${index}`,
   };
-  //   id: `full-width-tab-${index}`,
-  //   'aria-controls': `full-width-tabpanel-${index}`,
-  // };
 }
 
 function Education() {
@@ -100,47 +89,92 @@ function Education() {
  
 
   return (
-    <div className={classes.root}>
-      <AppBar className={classes.mainContainer} position="static">
-      <h1 className={classes.subheading}>Education </h1>
-        <Tabs
-          className={classes.tabs}
-          orientation="vertical"
-          // variant="fullWidth"
-          variant="scrollable"
-          value={value}
-          onChange={handleChange}
-          indicatorColor="#8fc7e3"
-          textColor="primary"
-          
-          aria-label="full width tabs example"
+    // <div className={classes.root}>
+    <div>
+      <Grid container direction="row" justify="center" alignItems="center">
+        <p className={classes.subHeading}>Education</p>
+      </Grid>
+      
+      <Grid 
+        container 
+        direction="row" 
+        justify="center"
+        alignItems="center"
+      >
+        <AppBar 
+          className={classes.root}
+          position="static" 
+          xs={6}
+          style={{width: "auto"}}
         >
-          <Tab className={classes.subHeading}  label="Full-Stak Web Devleopment Bootcamp Certificate" {...a11yProps(0)} />
-          <Tab className={classes.subHeading}  label="Bachelor of Science in Psychology" {...a11yProps(1)} />
-          <Tab className={classes.subHeading}  label="Licensed Practical Nurse" {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
-      <Box className={classes.SwipeableViews}
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChangeIndex}
+          <Tabs
+            className={classes.tabs}
+            value={value}
+            onChange={handleChange}
+          >
+            <Tab 
+              className={classes.tab}
+              label="Full-Stak Web Devleopment Bootcamp Certificate" 
+              {...a11yProps(0)} 
+            />
+            <Tab 
+              className={classes.tab}
+              label="Bachelor of Science in Psychology" 
+              {...a11yProps(1)} 
+            />
+            <Tab 
+              className={classes.tab}
+              label="Licensed Practical Nurse" 
+              {...a11yProps(2)} 
+            />
+          </Tabs>
+        </AppBar>
+      </Grid>
+      <Grid 
+        container 
+        direction="row" 
+        justify="center"
+        alignItems="center"
+        style={{marginBottom: "200px"}}
+      >
+        <TabPanel 
+          value={value} 
+          index={0} 
+          dir={theme.direction}
         >
-        <TabPanel className={classes.subContainer} value={value} index={0} dir={theme.direction}>
-            <p>University of California at Davis </p>
-            <p>Davis, CA</p>
-            <p>June 2020 to December 2020</p>
+          <span style={{color: "#8fc7e3"}}>
+            University of California at Davis<br/>
+            Davis, CA<br/>
+            June 2020 to December 2020 
+          </span>
         </TabPanel>
-        <TabPanel className={classes.subContainer} value={value} index={1} dir={theme.direction}>
-            <p>University of Illinois at Urbana Champaign</p>
-            <p>Urbana, IL</p>
-            <p>August 2014 to May 2017</p>
+        
+        <TabPanel 
+          value={value} 
+          index={1} 
+          dir={theme.direction}
+        >
+          <span style={{color: "#8fc7e3"}}>
+            University of Illinois at Urbana Champaign<br/>
+            Urbana, IL<br/>
+            August 2014 to May 2017
+          </span>
         </TabPanel>
-        <TabPanel className={classes.subContainer} value={value} index={2} dir={theme.direction}>
-            <p>Parkland College</p>
-            <p>Champaign, IL</p>
-            <p>January 2011 to May 2012</p>
+        
+        <TabPanel 
+          value={value} 
+          index={2} 
+          dir={theme.direction}
+        >
+          <span style={{color: "#8fc7e3"}}>
+            Parkland College<br/>
+            Champaign, IL<br/>
+            January 2011 to May 2012
+          </span>
         </TabPanel>
-      </Box>
+
+      </Grid>
+
     </div>
   );
 }
